@@ -2,9 +2,9 @@ from Models.BaseModel import BaseModel, EnumField
 from peewee import IntegerField, TextField, CharField, PrimaryKeyField
 
 
-class Courses(BaseModel):
+class Course(BaseModel):
     id = PrimaryKeyField()
-    presentation = EnumField(choices=["practical", "practical"])
+    presentation = EnumField(choices=["practical", "theoretic"])
     type = EnumField(choices=["professional", "basic", "prime", "public"])
     status_prerequisite = EnumField(choices=["yes", "no"])
     name = CharField(30)

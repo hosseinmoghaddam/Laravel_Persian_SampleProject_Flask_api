@@ -8,7 +8,7 @@ from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer, BadSign
 import env
 
 
-class Students(BaseModel):
+class Student(BaseModel):
     firstname = CharField()
     lastname = CharField()
     father = CharField(default='test')
@@ -49,14 +49,14 @@ class Students(BaseModel):
         except BadSignature:
             return None  # invalid token
         try:
-            user = Students.get(Students.id == data['id'])
+            user = Student.get(Student.id == data['id'])
             return user
         except:
             return None
 
 
 if __name__ == '__main__':
-    u = Students()
+    u = Student()
     u.firstname = 'hossein'
     u.lastname = 'moghadam'
     u.address = 'tehran'

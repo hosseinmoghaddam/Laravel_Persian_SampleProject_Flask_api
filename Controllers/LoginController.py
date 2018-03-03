@@ -1,7 +1,7 @@
 from flask_restful import Resource
 from flask_httpauth import HTTPBasicAuth, HTTPTokenAuth
 from flask import session, url_for, request, redirect, g
-from Models.Student import Students
+from Models.Student import Student
 from Middleware.Auth import auth
 
 

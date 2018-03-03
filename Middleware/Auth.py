@@ -1,6 +1,6 @@
 from flask import g
 from flask_httpauth import HTTPBasicAuth, HTTPTokenAuth
-from Models.Student import Students
+from Models.Student import Student
 
 auth = HTTPBasicAuth()
 auth2 = HTTPTokenAuth()
@@ -10,11 +10,11 @@ auth2 = HTTPTokenAuth()
 @auth.verify_password
 def verify_password(username_or_token, password):
     # first try to authenticate by token
-    user = Students.verify_auth_token(username_or_token)
+    user = Student.verify_auth_token(username_or_token)
     if not user:
         # try to authenticate with username/password
         try:
-            user = Students.get(Students.student_number == username_or_token)
+            user = Student.get(Student.student_number == username_or_token)
         except:
             user = None
         if not user or not user.verify_password(password):
@@ -25,7 +25,7 @@ def verify_password(username_or_token, password):
 
 @auth2.verify_token
 def verify_token(token):
-    user = Students.verify_auth_token(token)
+    user = Student.verify_auth_token(token)
     if user:
         g.user = user
         return True

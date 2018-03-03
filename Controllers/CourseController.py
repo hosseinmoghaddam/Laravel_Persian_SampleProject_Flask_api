@@ -2,15 +2,15 @@ from flask_restful import Resource
 from flask_httpauth import HTTPBasicAuth, HTTPTokenAuth
 from flask import session, url_for, request, redirect, g
 
-from Models.Course import Courses
-from Models.Student import Students
+from Models.Course import Course
+from Models.Student import Student
 from Middleware.Auth import auth2
 
 
 class List(Resource):
     @auth2.login_required
     def get(self):
-        res = Courses.select()
+        res = Course.select()
         ls = [
             dict(
                 id=Course.id,
