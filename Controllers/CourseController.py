@@ -13,14 +13,14 @@ class List(Resource):
         res = Course.select()
         ls = [
             dict(
-                id=Course.id,
-                presentation=Course.presentation,
-                type=Course.type,
-                status_prerequisite=Course.status_prerequisite,
-                name=Course.name,
-                unit_number=Course.unit_number,
-                price=Course.price,
-                list_prerequisite=Course.list_prerequisite ,
-            ) for Course in res
+                id=course.id,
+                presentation=course.presentation,
+                type=course.type,
+                status_prerequisite=course.status_prerequisite,
+                name=course.name,
+                unit_number=course.unit_number,
+                price=course.price,
+                list_prerequisite=course.list_prerequisite
+            ) for course in res
         ]
         return dict(courses=ls)
