@@ -1,7 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-
+__author__ = 'hossein moghadam'
+from flask import json
 from peewee import Model, MySQLDatabase, Field, SQL
 import env
 
@@ -14,6 +12,15 @@ mysql_db = MySQLDatabase(env.DB_DATABASE, user=env.DB_USERNAME, password=env.DB_
 class BaseModel(Model):
     class Meta:
         database = mysql_db
+
+    # def __str__(self):
+    #     r = {}
+    #     for k in self._data.keys():
+    #         try:
+    #             r[k] = str(getattr(self, k))
+    #         except:
+    #             r[k] = json.dumps(getattr(self, k))
+    #     return str(r)
 
 
 class EnumField(Field):

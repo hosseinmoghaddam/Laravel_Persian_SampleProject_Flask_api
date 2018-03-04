@@ -1,3 +1,4 @@
+__author__ = 'hossein moghadam'
 from Seeders.CourseTableSeeder import course_seed
 
 

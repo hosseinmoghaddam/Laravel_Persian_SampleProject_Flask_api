@@ -1,3 +1,4 @@
+__author__ = 'hossein moghadam'
 from passlib.handlers.bcrypt import bcrypt
 
 from Models.BaseModel import BaseModel
@@ -21,8 +22,8 @@ class Student(BaseModel):
     entry_semester = CharField(default='test')
     img = CharField(default='test')
     address = TextField(default='test')
-    student_number = IntegerField(unique=True)
-    id = PrimaryKeyField()
+    student_number = PrimaryKeyField(unique=True)
+    id = IntegerField(11)
     password = CharField()
 
     class Meta:

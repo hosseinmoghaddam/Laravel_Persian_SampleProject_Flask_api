@@ -1,3 +1,4 @@
+__author__ = 'hossein moghadam'
 from flask import g
 from flask_httpauth import HTTPBasicAuth, HTTPTokenAuth
 from Models.Student import Student
