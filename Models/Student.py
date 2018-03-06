@@ -55,12 +55,3 @@ class Student(BaseModel):
         except:
             return None
 
-#
-# if __name__ == '__main__':
-#     u = Student()
-#     u.firstname = 'hossein'
-#     u.lastname = 'moghadam'
-#     u.address = 'tehran'
-#     u.student_number = 123
-#     u.hash_password("123")
-#     u.save()
