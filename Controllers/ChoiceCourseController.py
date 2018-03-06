@@ -45,7 +45,7 @@ class List(Resource):
                         list_prerequisite=choicecourse.Group_Course_code_course_id.Course_id.list_prerequisite,
                     )],
                     professor_id=[dict(
-                        # id=choicecourse.Group_Course_code_course_id.professor_id.id,
+                        id=choicecourse.Group_Course_code_course_id.professor_id.id,
                         firstname=choicecourse.Group_Course_code_course_id.professor_id.firstname,
                         lastname=choicecourse.Group_Course_code_course_id.professor_id.lastname,
                         # father=choicecourse.Group_Course_code_course_id.professor_id.father,

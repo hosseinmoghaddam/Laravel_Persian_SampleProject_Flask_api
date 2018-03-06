@@ -24,7 +24,7 @@ class List(Resource):
                 term=groupcourse.term,
                 capacity=groupcourse.capacity,
                 min_capacity=groupcourse.min_capacity,
-                Course_id=[dict(
+                Course_id=dict(
                     id=groupcourse.Course_id.id,
                     presentation=groupcourse.Course_id.presentation,
                     type=groupcourse.Course_id.type,
@@ -33,19 +33,19 @@ class List(Resource):
                     unit_number=groupcourse.Course_id.unit_number,
                     price=groupcourse.Course_id.price,
                     list_prerequisite=groupcourse.Course_id.list_prerequisite,
-                )],
-                professor_id=[dict(
+                ),
+                professor_id=dict(
                     firstname=groupcourse.professor_id.firstname,
                     lastname=groupcourse.professor_id.lastname,
-                )],
-                Time_Course_id=[dict(
+                ),
+                Time_Course_id=dict(
                     id=groupcourse.Time_Course_id.id,
                     days=groupcourse.Time_Course_id.days,
                     time=groupcourse.Time_Course_id.time,
                     classes=groupcourse.Time_Course_id.classes,
                     rotatory=groupcourse.Time_Course_id.rotatory,
                     day_rotatory=groupcourse.Time_Course_id.day_rotatory,
-                )]
+                )
             ) for groupcourse in groupcourses
         ]
         return dict(courses=ls)

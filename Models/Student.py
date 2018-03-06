@@ -1,7 +1,7 @@
 __author__ = 'hossein moghadam'
 from passlib.handlers.bcrypt import bcrypt
 
-from Models.BaseModel import BaseModel
+from Models.BaseModel import BaseModel, EnumField
 import os
 from peewee import IntegerField, TextField, CharField, PrimaryKeyField
 from passlib.apps import custom_app_context as pwd_context
@@ -17,14 +17,14 @@ class Student(BaseModel):
     location_brith = CharField(default='test')
     phone = CharField(default='test')
     mobile = CharField(default='test')
-    national_code = CharField(default='test')
-    status = CharField(default='test')
-    entry_semester = CharField(default='test')
+    national_code = CharField(default='1234')
+    status = EnumField(choices=['active', 'non_active', 'expulsion', 'alumnus'])
+    entry_semester = CharField(default='2')
     img = CharField(default='test')
     address = TextField(default='test')
     student_number = PrimaryKeyField(unique=True)
-    id = IntegerField(11)
-    password = CharField()
+    id = CharField(11)
+    password = CharField(100)
 
     class Meta:
         db_table = "student"
@@ -55,12 +55,12 @@ class Student(BaseModel):
         except:
             return None
 
-
-if __name__ == '__main__':
-    u = Student()
-    u.firstname = 'hossein'
-    u.lastname = 'moghadam'
-    u.address = 'tehran'
-    u.student_number = 123
-    u.hash_password("123")
-    u.save()
+#
+# if __name__ == '__main__':
+#     u = Student()
+#     u.firstname = 'hossein'
+#     u.lastname = 'moghadam'
+#     u.address = 'tehran'
+#     u.student_number = 123
+#     u.hash_password("123")
+#     u.save()
