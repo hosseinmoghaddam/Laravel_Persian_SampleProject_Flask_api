@@ -17,8 +17,5 @@ routes.route(api)
 console.cli(app)
 
 if __name__ == '__main__':
-    mysql_db.connect()
-
-    # mysql_db.create_tables([Students])
 
     app.run(env.HOST, env.PORT, env.DEBUG)
