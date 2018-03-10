@@ -1,4 +1,5 @@
 __author__ = 'hossein moghadam'
+
 from flask_restful import Resource
 
 from Middleware.Auth import auth2
@@ -13,21 +14,13 @@ class List(Resource):
             dict(
                 id=groupcourse.id,
                 group_number=groupcourse.group_number,
-                semester=groupcourse.semester,
-                guest_semester=groupcourse.guest_semester,
-                date_exam=groupcourse.date_exam,
-                time_exam=groupcourse.time_exam,
                 term=groupcourse.term,
-                capacity=groupcourse.capacity,
-                min_capacity=groupcourse.min_capacity,
                 Course_id=dict(
                     id=groupcourse.Course_id.id,
                     presentation=groupcourse.Course_id.presentation,
                     type=groupcourse.Course_id.type,
-                    status_prerequisite=groupcourse.Course_id.status_prerequisite,
                     name=groupcourse.Course_id.name,
                     unit_number=groupcourse.Course_id.unit_number,
-                    price=groupcourse.Course_id.price,
                     list_prerequisite=groupcourse.Course_id.list_prerequisite,
                 ),
                 professor_id=dict(
@@ -44,4 +37,4 @@ class List(Resource):
                 )
             ) for groupcourse in groupcourses
         ]
-        return dict(courses=ls)
+        return dict(schedule=ls)

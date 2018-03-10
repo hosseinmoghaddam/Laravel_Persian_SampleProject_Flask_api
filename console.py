@@ -16,5 +16,5 @@ def cli(app):
         # timecourse_seed()
         # professor_seed()
         # groupcourse_seed()
-        student_seed()
+        # student_seed()
         choicecourse_seed()
