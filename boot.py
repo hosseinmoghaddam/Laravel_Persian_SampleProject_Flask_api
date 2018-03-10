@@ -21,4 +21,4 @@ if __name__ == '__main__':
 
     # mysql_db.create_tables([Students])
 
-    app.run('0.0.0.0', 5000, True)
+    app.run(env.HOST, env.PORT, env.DEBUG)

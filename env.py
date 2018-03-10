@@ -8,3 +8,8 @@ DB_PORT = 3306
 DB_DATABASE = 'qurandb'
 DB_USERNAME = 'root'
 DB_PASSWORD = ''
+
+HOST = '0.0.0.0'
+PORT = 5000
+DEBUG = True
+
